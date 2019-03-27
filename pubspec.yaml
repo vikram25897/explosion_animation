@@ -1,6 +1,7 @@
 name: explosion_animation
-description: A new Flutter project.
-version: 1.0.1
+description: A simple flutter widget that creates explosion animation for any image, either from file
+or asset.
+version: 1.0.2
 author: Vikram Pratap Singh <vikram25897@gmail.com>
 homepage: https://github.com/vikram25897/explosion_animation
 
