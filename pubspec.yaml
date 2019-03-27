@@ -1,8 +1,8 @@
 name: explosion_animation
 description: A new Flutter project.
-version: 0.0.1
-author:
-homepage:
+version: 1.0.1
+author: Vikram Pratap Singh <vikram25897@gmail.com>
+homepage: https://github.com/vikram25897/explosion_animation
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
