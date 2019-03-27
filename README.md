@@ -12,7 +12,7 @@ No configuration required - the plugin should work out of the box.
 
 ### Example
 
-![Animation Type Spread](blob/explode_anim.gif)
+![Animation Type Spread](explode_anim.gif)
 
 ``` dart
 import 'package:exlosion_animation/exlosion_animation.dart';
