@@ -1,90 +1,52 @@
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:explosion_animation/explosion_animation.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-class Home extends StatelessWidget{
-  String number;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              keyboardType: TextInputType.number,
-              textAlign: TextAlign.center,
-              onChanged: (str){
-                number = str;
-              },
-              decoration: InputDecoration(
-                hintText: "Number Of particles",
-              ),
-            ),
-            MaterialButton(
-                color: Colors.red,
-                padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
-                child: Text("Pick An Image"),
-                onPressed: (){
-              getImage(context);
-            }),
-          ],
-        ),
-      ),
-    );
-  }
-  getImage(BuildContext context)async{
-    File img = await ImagePicker.pickImage(source: ImageSource.gallery);
-    Navigator.push(context, MaterialPageRoute(builder: (c)=>MyHomePage(file: img,number:number == null ?100:int.parse(number))));
-  }
-}
-var key = Explode.getKey();
+
 class MyHomePage extends StatefulWidget {
-  final File file;
-  final int number;
-  MyHomePage({Key key, this.title,this.file,this.number}) : super(key: key);
+  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Center(
-        child: Container(
-          child: InkWell(
-            onTap: (){
-              key.currentState.explode();
-            },
-            child: Explode(
-              key: key,
-              size: Size(300, 300),
-              fit: BoxFit.cover,
-              particleCount: widget.number ?? 100,
-              path: widget.file.path,
-              type: ExplodeType.Spread,
-              isAsset: false,
-            ),
+        child: Explode(
+          shakeBeforeExploding: true,
+          child: Container(
+            width: 300,
+            height: 300,
+            color: Colors.red,
           ),
         ),
       ),
     );
   }
 }
-
