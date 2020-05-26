@@ -16,7 +16,3 @@ No configuration required - the plugin should work out of the box.
 
 ![Animation Type Spread](explode_anim.gif)
 
-### Credits
-[Vikram Pratap Singh](https://github.com/vikram25897)
-
-###

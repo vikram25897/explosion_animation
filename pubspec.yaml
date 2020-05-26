@@ -1,7 +1,6 @@
 name: explosion_animation
 description: A simple flutter widget that creates explosion animation for any image, either from file or asset
-version: 1.0.2
-author: Vikram Pratap Singh <vikram25897@gmail.com>
+version: 1.0.3
 homepage: https://github.com/vikram25897/explosion_animation
 
 environment:
@@ -10,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  palette_generator: ^0.1.1
+  palette_generator: ^0.2.2
+  vector_math: ^2.0.8
 dev_dependencies:
   flutter_test:
     sdk: flutter

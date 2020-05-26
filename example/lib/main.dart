@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: Explode(
               key: key,
-              size: Size(300, 300),
+              size: MediaQuery.of(context).size,
               fit: BoxFit.cover,
               particleCount: widget.number ?? 100,
               path: widget.file.path,
